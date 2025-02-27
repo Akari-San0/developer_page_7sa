@@ -4,12 +4,32 @@
     --primario:#ffc107;
     --secundario:#0097a7;
     --gris:#757575;
-    
+    font-family:Krub, Helvetica, sans-serif
 }
 
 html{
     font-size: 62.5%;
-    font-family: Krub,Arial, Helvetica, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+   
+}
+*, *::before, *::after{
+box-sizing: inherit;
+}
+
+/*Tipografia*/
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.48rem;
+}
+
+hi,h2,h3{
+    text-align: center;
 }
 body{
     font-size: 16px;
@@ -23,7 +43,16 @@ body{
     font-size: 2rem;
 }
 
-
+.navegacion-principal {
+    padding: 5rem;
+    background-color: var(--secundario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: bold;
+}
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
@@ -38,26 +67,14 @@ body{
     text-decoration: none;
     padding: 1rem;
 }
-
-.navegacion-principal {
-   /* padding: 4rem;*/
-    background-color: var(--secundario);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 2rem;
-    font-weight: bold;
-}
-/* si al menos tine 763px (tabkle)*/
-@media (min-width: 768px) {
+@media(min-width:768px) {
     .navegacion-principal{
         flex-direction: row;
-        align-items: center;
         justify-content: space-between;
     }
  
 }
+
 .navegacion-principal a:hover{
     background-color: var(--primario);
     color: var(--oscuro)
@@ -65,6 +82,56 @@ body{
 .hero{
     background-image: url("../img/hero.jpg");
     background-repeat: no-repeat;
-    background-size: cover;/*cover cubre la imagen con todo el tamano*/
-    
+    background-size: cover;
+    height: 450px;
+    position: relative;
+}
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido-hero p,
+.contenido-hero h2{
+    color: var(--blanco);
+}
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    /*Poner margen solo arriba*/
+    margin-top: 3rem;
+    /*tamaño de letra*/
+    font-size: 2rem;
+    /*quitar subrayado*/
+    text-decoration: none;
+    /*converti texto en mayusculas*/
+    text-transform: uppercase;
+    /*texto en negritas*/
+    font-weight: bold;
+    /*borde redondeado*/
+    border-radius: .5rem;
+    /*ponerl 90% del botonpara diseno movil*/   
+    width: 90%;
+    /*alinel texto del boton*/   
+    text-align: center;
+    /*cambiar cursor al pasar por encima*/
+    cursor: pointer;
+}
+
+@media (min-width:768px){
+    .boton{
+        width: auto;
+    }
 }
